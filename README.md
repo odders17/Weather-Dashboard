@@ -1,2 +1,2 @@
-# Weather-dashbord
-Use an api to retrieve weather data for cities
+# Weather-Dashboard
+Use an API to retrieve weather data for cities
