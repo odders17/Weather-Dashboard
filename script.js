@@ -24,9 +24,10 @@ function callWeatherTemps(city) {
 
 //When button is pressed empties the weather-append div 
 $("#weather-append").empty();
-//Converts to Fahrenheit from Kelvin
-    var fahrenheit = (
-        (parseInt(response.main.temp - 273.15) * 9) / 5 + 32 ).toFixed() + " F";
+//Converts to Celsius from Kelvin
+var celsius = (response.main.temp - 273.15);
+$(".current-temp").text("Temperature: " + celsius.toFixed(2) + "°C");
+
 //Gets Humidity from response
     var humidity = response.main.humidity + "%";
 //Gets wind from response
@@ -43,7 +44,7 @@ $("#weather-append").empty();
 );
 
 //Adds text to the p tags to the DOM
-var cardTemp = $("<p>").text("Temperature: " + fahrenheit);
+var cardTemp = $("<p>").text("Temperature: " + celsius);
 var cardHumidity = $("<p>").text("Humidity: " + humidity);
 var cardWind = $("<p>").text("Wind Speed: " + wind);
 
@@ -90,8 +91,8 @@ function callFiveDay(lat, lon) {
     for (var i = 0; i < 5; i++) {
         var forecastWeather = dayArray[i + 1];
         var date = new Date(forecastWeather.dt * 1000);
-        var fahrenheit = (
-            (parseInt(forecastWeather.temp.day - 273.15) * 9) / 5 + 32).toFixed() + " F";
+        var celsius = (forecastWeather.temp.day - 273.15);
+        ( + celsius.toFixed(2) + "°C");
 
             var cardBody = $("<div>").addClass("card-body");
             var cardTitle = $("<h3>")
@@ -100,7 +101,7 @@ function callFiveDay(lat, lon) {
 
 //Appends icon weather to the five day forecast.
       cardTitle.append( '<img src="http://openweathermap.org/img/wn/' + forecastWeather.weather[0].icon + '.png" >');
-        var cardTemp = $("<p>").text("Temperature: " + fahrenheit);
+        var cardTemp = $("<p>").text("Temperature: " + celsius);
 
         $("#fiveday-append").append(cardBody, cardTitle, cardTemp);
     }
