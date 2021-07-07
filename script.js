@@ -25,7 +25,7 @@ function callWeatherTemps(city) {
 //When button is pressed empties the weather-append div 
 $("#weather-append").empty();
 //Converts to Celsius from Kelvin
-var celsius = (response.main.temp - 273.15);
+var celsius = Math.floor(response.main.temp - 273.15);
 $(".current-temp").text("Temperature: " + celsius.toFixed(2) + "°C");
 
 //Gets Humidity from response
@@ -91,7 +91,7 @@ function callFiveDay(lat, lon) {
     for (var i = 0; i < 5; i++) {
         var forecastWeather = dayArray[i + 1];
         var date = new Date(forecastWeather.dt * 1000);
-        var celsius = (forecastWeather.temp.day - 273.15);
+        var celsius = Math.floor(forecastWeather.temp.day - 273.15);
         ( + celsius.toFixed(2) + "°C");
 
             var cardBody = $("<div>").addClass("card-body");
