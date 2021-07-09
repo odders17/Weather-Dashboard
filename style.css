@@ -1,15 +1,20 @@
-.jumbotron.bg-secondary {
+.jumbotron {
     color: black;
-    background-color: skyblue;
+    background-color: skyblue !important;
 }
 
 
 .display-6 {
     color: black;
-    background-color: lightgrey;
+    background-color: skyblue
 }
 
 .card-title {
     color: black;
-    background-color: lightgrey;
+    background-color: skyblue;
 }
+
+.card-body, .card-header, .card {
+    background-color: skyblue !important;
+}
+
