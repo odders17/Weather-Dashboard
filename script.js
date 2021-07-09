@@ -93,7 +93,7 @@ function callFiveDay(lat, lon) {
         var forecastWeather = dayArray[i + 1];
         var date = new Date(forecastWeather.dt * 1000);
         var celsius = Math.floor(forecastWeather.temp.day - 273.15);
-        ( + celsius.toFixed(2) + "°C");
+        // ( + celsius.toFixed(2) + "°C");
 
             var cardBody = $("<div>").addClass("card-body");
             var cardTitle = $("<h3>")
